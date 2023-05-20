@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
+  const { logOut } = useContext(AuthContext);
   const navMenu = (
     <>
       <li>
@@ -23,7 +26,7 @@ const Navbar = () => {
       </li>
 
       <li>
-        <button>Logout</button>
+        <button onClick={() => logOut()}>Logout</button>
       </li>
       <li>
         <Link to="/login">Login</Link>
