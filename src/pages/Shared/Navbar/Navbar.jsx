@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 const Navbar = () => {
-  const { logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const navMenu = (
     <>
       <li>
@@ -13,24 +16,43 @@ const Navbar = () => {
         <Link to="/allToys">All Toys</Link>
       </li>
       <li>
-        <Link to="/myToys">My Toys</Link>
-      </li>
-      <li>
-        <Link to="/addToys">Add A Toy</Link>
-      </li>
-      <li>
         <Link to="/blog">Blog</Link>
       </li>
-      <li>
-        <Link to="/user">User</Link>
-      </li>
 
-      <li>
-        <button onClick={() => logOut()}>Logout</button>
-      </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
+      {user ? (
+        <>
+          <li>
+            <Link to="/myToys">My Toys</Link>
+          </li>
+          <li>
+            <Link to="/addToys">Add A Toy</Link>
+          </li>
+          <li>
+            {
+              <Tippy content={user && user?.displayName}>
+                {user?.photoURL ? (
+                  <img
+                    className="w-[65px] h-[60px] rounded-full"
+                    src={user.photoURL}
+                    alt="User Image"
+                  />
+                ) : (
+                  <Link to="/user">
+                    <FaUserCircle className="text-2xl" />
+                  </Link>
+                )}
+              </Tippy>
+            }
+          </li>
+          <li className="border rounded-md hover:bg-violet-800">
+            <button onClick={() => logOut()}>Logout</button>
+          </li>
+        </>
+      ) : (
+        <li className="border rounded-md hover:bg-violet-800">
+          <Link to="/login">Login</Link>
+        </li>
+      )}
     </>
   );
   return (
@@ -64,7 +86,7 @@ const Navbar = () => {
           <h2 className="text-4xl font-bold mb-5">KiddToY</h2>
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navMenu}</ul>
       </div>
     </div>
