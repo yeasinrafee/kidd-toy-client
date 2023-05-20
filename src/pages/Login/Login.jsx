@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log(email, password);
+  };
   return (
     <div className="w-1/2 mx-auto border px-14 pt-10 pb-20 my-10 rounded-md shadow-lg">
       <h1 className="text-4xl font-bold text-center my-6 text-violet-500">
         Please Login
       </h1>
-      <form>
+      <form onSubmit={handleLogin}>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -15,6 +23,7 @@ const Login = () => {
             type="text"
             placeholder="email"
             className="input input-bordered"
+            name="email"
           />
         </div>
         <div className="form-control">
@@ -25,17 +34,13 @@ const Login = () => {
             type="text"
             placeholder="password"
             className="input input-bordered"
+            name="password"
           />
-          <label className="label">
-            <a href="#" className="label-text-alt link link-hover">
-              Forgot password?
-            </a>
-          </label>
         </div>
         <input
           type="submit"
           value="Login"
-          className="btn btn-block bg-violet-500 border-none mt-3 hover:bg-violet-800"
+          className="btn btn-block bg-violet-500 border-none mt-5 hover:bg-violet-800"
         />
       </form>
       <p className="my-5 text-center text-sm">
