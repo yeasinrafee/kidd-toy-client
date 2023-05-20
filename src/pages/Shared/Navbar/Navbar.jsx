@@ -23,11 +23,11 @@ const Navbar = () => {
       </li>
 
       <li>
-        <button>Log out</button>
+        <button>Logout</button>
       </li>
-      {/* <li>
+      <li>
         <Link to="/login">Login</Link>
-      </li> */}
+      </li>
     </>
   );
   return (
