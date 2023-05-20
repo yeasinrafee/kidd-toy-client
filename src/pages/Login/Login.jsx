@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+  const [error, setError] = useState("");
   const { user, logIn, googleLogIn } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
@@ -12,16 +13,33 @@ const Login = () => {
 
     console.log(email, password);
 
+    // Password validation
+    if (user) {
+      setError("");
+      if (user.email !== email) {
+        setError("Email and password could not matched");
+      } else if (email === "" || password === "") {
+        setError("All fields are required");
+        return;
+      } else if (password.length < 6) {
+        setError("Password must be at least 6 characters");
+        return;
+      }
+    }
+
+    // Login Authentication
     logIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        form.reset();
       })
       .catch((err) => console.log(err));
   };
 
   // Handle Google Login
   const handleGoogle = () => {
+    setError("");
     googleLogIn()
       .then((result) => {
         const user = result.user;
@@ -29,6 +47,7 @@ const Login = () => {
       })
       .catch((err) => {
         console.log(err);
+        setError(err.message);
       });
   };
   return (
@@ -65,6 +84,10 @@ const Login = () => {
           className="btn btn-block bg-violet-500 border-none mt-5 hover:bg-violet-800"
         />
       </form>
+
+      {/* Showing Error Text  */}
+      <p className="text-red-500 mt-3">{error}</p>
+
       <div className="mt-5 w-[250px] mx-auto">
         <button onClick={handleGoogle}>
           <img src="./images/googleSignIn.png" alt="Google sign in" />

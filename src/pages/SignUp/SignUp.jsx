@@ -20,7 +20,10 @@ const SignUp = () => {
 
         // It'll update the user name and Photo
         updateUser(name, photo)
-          .then(() => console.log("User Updated"))
+          .then(() => {
+            console.log("User Updated");
+            form.reset();
+          })
           .catch((err) => console.log(err));
         console.log(user);
       })
