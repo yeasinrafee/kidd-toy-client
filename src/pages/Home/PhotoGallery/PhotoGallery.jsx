@@ -73,11 +73,11 @@ const PhotoGallery = () => {
     },
   ];
   return (
-    <div>
+    <div className="bg-violet-50 py-5">
       <div className="text-violet-500 text-4xl text-center font-bold mt-40 mb-12">
-        Here is Our Great Collection
+        Here is Our Beautiful Collection
       </div>
-      <Gallery photos={photos} />;
+      <Gallery photos={photos} />
     </div>
   );
 };
