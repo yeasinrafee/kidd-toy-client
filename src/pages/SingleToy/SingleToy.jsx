@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom";
 const SingleToy = () => {
   const toy = useLoaderData();
   const {
-    _id,
     picture,
     toy_name,
     price,
