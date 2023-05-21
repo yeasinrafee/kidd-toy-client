@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -9,13 +10,11 @@ const MyToys = () => {
     fetch(`http://localhost:5000/myToys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setMyToys(data);
       });
   }, [user]);
 
   const handleDelete = (id) => {
-    console.log(id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -32,8 +31,9 @@ const MyToys = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              console.log(data);
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              const remaining = myToys.filter((toy) => toy._id == id);
+              setMyToys(remaining);
             }
           });
       }
@@ -74,9 +74,11 @@ const MyToys = () => {
                 <td>$ {toys?.price}</td>
                 <td>{toys?.quantity}</td>
                 <td>
-                  <button className="btn bg-violet-500 btn-xs border-none">
-                    <label htmlFor="my-modal">update</label>
-                  </button>
+                  <Link to={`/updateToy/${toys?._id}`}>
+                    <button className="btn bg-violet-500 btn-xs border-none">
+                      <label htmlFor="my-modal">update</label>
+                    </button>
+                  </Link>
                 </td>
                 <td>
                   <button
