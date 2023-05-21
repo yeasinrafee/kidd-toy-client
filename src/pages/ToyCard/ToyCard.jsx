@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ToyCard = ({ toy }) => {
   const { picture, toy_name, price, ratings } = toy || {};
   return (
@@ -12,9 +14,11 @@ const ToyCard = ({ toy }) => {
         <p>Price: ${price}</p>
         <p>Ratings: {ratings} stars</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary bg-violet-500 border-none">
-            Details
-          </button>
+          <Link to={`/toys/${toy?._id}`}>
+            <button className="btn btn-primary bg-violet-500 border-none">
+              Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>
