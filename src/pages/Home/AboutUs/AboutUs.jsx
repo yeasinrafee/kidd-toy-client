@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <div className="my-28 bg-violet-50">
+    <div className="my-28 bg-violet-50 rounded-md">
       <h2 className="text-3xl text-center text-violet-500 font-bold pt-20 mb-5 md:mb-0">
         About Us
       </h2>
