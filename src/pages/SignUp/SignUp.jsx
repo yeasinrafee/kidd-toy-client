@@ -34,7 +34,7 @@ const SignUp = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="w-1/2 mx-auto border px-14 pt-10 pb-20 my-10 rounded-md shadow-lg">
+    <div className="w-full md:w-1/2 mx-auto border px-14 pt-10 pb-20 my-10 rounded-md shadow-lg">
       <h1 className="text-4xl font-bold text-center my-6 text-violet-500">
         Please Sign Up
       </h1>
