@@ -12,7 +12,7 @@ const AddAToy = () => {
 
     const picture = form.photo.value;
     const toy_name = form.name.value;
-    const price = form.price.value;
+    const price = parseFloat(form.price.value);
     const ratings = form.ratings.value;
     const seller_name = form.seller_name.value;
     const sub_category = form.category.value;
