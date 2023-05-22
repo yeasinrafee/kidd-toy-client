@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import useTitle from "../../hooks/useTitle";
 
 const SignUp = () => {
   useTitle("KiddToY | Sign Up");
   const { createUser, updateUser } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -28,6 +29,7 @@ const SignUp = () => {
           })
           .catch((err) => console.log(err));
         console.log(user);
+        navigate("/");
       })
       .catch((err) => console.log(err));
   };
