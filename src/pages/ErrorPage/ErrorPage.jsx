@@ -1,7 +1,9 @@
 import { FaceFrownIcon } from "@heroicons/react/24/solid";
 import { Link, useRouteError } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 const ErrorPage = () => {
+  useTitle("ErrorPage");
   const { error, status } = useRouteError();
 
   return (
