@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
-  useTitle("My Toys");
+  useTitle("KiddToY | My Toys");
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
   useEffect(() => {

@@ -4,7 +4,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import useTitle from "../../hooks/useTitle";
 
 const SignUp = () => {
-  useTitle("Sign Up");
+  useTitle("KiddToY | Sign Up");
   const { createUser, updateUser } = useContext(AuthContext);
   const handleSignUp = (e) => {
     e.preventDefault();

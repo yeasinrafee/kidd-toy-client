@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
 
 const SingleToy = () => {
-  useTitle("Toy Details");
+  useTitle("KiddToY | Toy Details");
   const toy = useLoaderData();
   const {
     picture,

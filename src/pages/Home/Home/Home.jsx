@@ -6,7 +6,7 @@ import Contact from "../Contact/Contact";
 import PhotoGallery from "../PhotoGallery/PhotoGallery";
 
 const Home = () => {
-  useTitle("Home Page");
+  useTitle("KiddToY | Home Page");
   return (
     <div>
       <Banner />

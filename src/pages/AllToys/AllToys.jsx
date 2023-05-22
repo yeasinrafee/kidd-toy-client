@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
-  useTitle("ALL Toys");
+  useTitle("KiddToY | ALL Toys");
   const [allToys, setAllToys] = useState([]);
   const [searchText, setSearchText] = useState([]);
 

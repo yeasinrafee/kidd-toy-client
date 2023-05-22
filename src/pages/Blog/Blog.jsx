@@ -1,7 +1,7 @@
 import useTitle from "../../hooks/useTitle";
 
 const Blog = () => {
-  useTitle("Blog");
+  useTitle("KiddToY | Blog");
   return (
     <div className="w-full md:w-11/12 my-5 md:mx-auto px-3 md:px-0">
       {/* ALL Blog Question Answers  */}
