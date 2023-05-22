@@ -1,6 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
 
+// Rating Stars
+import "@smastrom/react-rating/style.css";
+import { Rating } from "@smastrom/react-rating";
+
 const SingleToy = () => {
   useTitle("KiddToY | Toy Details");
   const toy = useLoaderData();
@@ -48,16 +52,22 @@ const SingleToy = () => {
           <p className="py-6 text-gray-400">
             <span className="font-bold text-black">Details: </span> {details}
           </p>
-          <p className="pb-7">
-            <span className="mr-20">
-              <span className="font-bold">Ratings: </span>
-              {ratings} stars
-            </span>{" "}
-            <span>
-              <span className="font-bold">Price: $</span>
-              {price}
-            </span>
-          </p>
+
+          <div className="flex items-center gap-9">
+            <div className="flex items-center gap-3">
+              <span className="font-bold">Ratings:</span>
+              <Rating
+                style={{ maxWidth: 100 }}
+                value={Math.round(ratings)}
+                readOnly
+              />
+            </div>
+            <p>
+              <span>
+                <span className="font-bold">Price: </span>${price}
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </div>

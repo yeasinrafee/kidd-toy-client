@@ -73,7 +73,7 @@ const PhotoGallery = () => {
     },
   ];
   return (
-    <div className="bg-violet-50 py-5" data-aos="zoom-in-up">
+    <div className=" py-5" data-aos="zoom-in-up">
       <div className="text-violet-500 text-4xl text-center font-bold mt-40 mb-12">
         Here is Our Beautiful Collection
       </div>

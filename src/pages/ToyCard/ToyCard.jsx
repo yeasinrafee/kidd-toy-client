@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 
+// Rating Stars
+import "@smastrom/react-rating/style.css";
+import { Rating } from "@smastrom/react-rating";
+
 const ToyCard = ({ toy }) => {
   const { picture, toy_name, price, ratings } = toy || {};
   return (
@@ -11,8 +15,17 @@ const ToyCard = ({ toy }) => {
         <h2 className="text-2xl font-bold text-violet-500 text-center">
           {toy_name}
         </h2>
-        <p>Price: ${price}</p>
-        <p>Ratings: {ratings} stars</p>
+        <p>
+          <span className="font-bold">Price:</span> ${price}
+        </p>
+        <div className="flex items-center gap-1">
+          <span className="font-bold">Ratings:</span>
+          <Rating
+            style={{ maxWidth: 100 }}
+            value={Math.round(ratings)}
+            readOnly
+          />
+        </div>
         <div className="card-actions justify-end">
           <Link to={`/toys/${toy?._id}`}>
             <button className="btn btn-primary bg-violet-500 border-none">
