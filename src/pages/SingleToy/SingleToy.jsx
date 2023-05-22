@@ -23,7 +23,11 @@ const SingleToy = () => {
       <div className="flex flex-col md:flex-row justify-around items-center px-5 md:gap-16 md:p-20">
         <div className="w-full md:w-1/2">
           {" "}
-          <img src={picture} className=" rounded-lg shadow-2xl opacity-80" />
+          <img
+            src={picture}
+            className=" rounded-lg shadow-2xl opacity-80"
+            data-aos="flip-left"
+          />
         </div>
         <div className="w-full md:w-1/2">
           <h1 className="text-2xl mt-5 md:text-4xl font-bold text-violet-900">

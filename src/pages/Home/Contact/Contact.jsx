@@ -2,7 +2,10 @@ import { FaClock, FaMapMarkedAlt, FaMobile } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-around bg-violet-500 text-white mt-20 mb-10 py-14 rounded-md">
+    <div
+      className="flex flex-col md:flex-row items-center justify-around bg-violet-500 text-white mt-20 mb-10 py-14 rounded-md"
+      data-aos="flip-up"
+    >
       <div className="flex items-center gap-5 mb-9 md:mb-0">
         <p className="text-4xl bg-violet-700 p-3 rounded-lg">
           <FaClock></FaClock>
