@@ -68,17 +68,19 @@ const AddAToy = () => {
               placeholder="Picture URL"
               className="input input-bordered"
               name="photo"
+              required
             />
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Name</span>
+              <span className="label-text">Toy Name</span>
             </label>
             <input
               type="text"
               placeholder="Name"
               className="input input-bordered"
               name="name"
+              required
             />
           </div>
           <div className="form-control">
@@ -91,6 +93,7 @@ const AddAToy = () => {
               className="input input-bordered"
               name="seller_name"
               defaultValue={user?.displayName}
+              required
             />
           </div>
           <div className="form-control">
@@ -115,6 +118,7 @@ const AddAToy = () => {
               placeholder="Sub Category"
               className="input input-bordered"
               name="category"
+              required
             />
           </div>
           <div className="form-control">
@@ -126,6 +130,7 @@ const AddAToy = () => {
               placeholder="Price"
               className="input input-bordered"
               name="price"
+              required
             />
           </div>
           <div className="form-control">
@@ -137,6 +142,7 @@ const AddAToy = () => {
               placeholder="Ratings"
               className="input input-bordered"
               name="ratings"
+              required
             />
           </div>
           <div className="form-control">
@@ -148,6 +154,7 @@ const AddAToy = () => {
               placeholder="Available Quantity"
               className="input input-bordered"
               name="quantity"
+              required
             />
           </div>
         </div>
