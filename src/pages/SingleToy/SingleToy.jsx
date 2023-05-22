@@ -53,7 +53,7 @@ const SingleToy = () => {
             <span className="font-bold text-black">Details: </span> {details}
           </p>
 
-          <div className="flex items-center gap-9">
+          <div className="flex items-center gap-9 pb-9">
             <div className="flex items-center gap-3">
               <span className="font-bold">Ratings:</span>
               <Rating
