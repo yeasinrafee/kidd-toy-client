@@ -43,11 +43,11 @@ const UpdateToy = () => {
   };
 
   return (
-    <div className="w-4/5 mx-auto border px-5 md:px-14 pt-10 pb-20 my-10 rounded-md shadow-lg">
+    <div className="w-4/5 mx-auto border px-5 md:px-16 pt-10 pb-20 my-10 rounded-md shadow-lg">
       <h1 className="text-4xl font-bold text-center my-6 text-violet-500">
         Update Your Toy
       </h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="grid gap-2 md:gap-5">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Price</span>
