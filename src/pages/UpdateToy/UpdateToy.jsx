@@ -1,10 +1,11 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useTitle from "../../hooks/useTitle";
 
 const UpdateToy = () => {
   useTitle("KiddToY | Update Toy");
   const toy = useLoaderData();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,6 +36,7 @@ const UpdateToy = () => {
             "Your Toy is Updated Successfully!",
             "success"
           );
+          navigate("/myToys");
         }
       });
     form.reset();
