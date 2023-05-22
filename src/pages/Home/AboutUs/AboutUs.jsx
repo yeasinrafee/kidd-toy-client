@@ -11,7 +11,7 @@ const AboutUs = () => {
         <div className="w-full md:w-1/2">
           {" "}
           <img
-            src="./images/about.jpg"
+            src="./images/about.webp"
             className=" rounded-lg shadow-2xl opacity-80"
           />
         </div>
