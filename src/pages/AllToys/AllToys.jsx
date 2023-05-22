@@ -1,25 +1,45 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
+import { RotatingLines } from "react-loader-spinner";
 
 const AllToys = () => {
   useTitle("KiddToY | ALL Toys");
   const [allToys, setAllToys] = useState([]);
   const [searchText, setSearchText] = useState([]);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/alltoys")
+    fetch("https://assignment11-xi.vercel.app/alltoys")
       .then((res) => res.json())
       .then((data) => {
         setAllToys(data);
+        setLoader(false);
       });
   }, []);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/search/${searchText}`)
+    fetch(`https://assignment11-xi.vercel.app/search/${searchText}`)
       .then((res) => res.json())
-      .then((data) => setAllToys(data));
+      .then((data) => {
+        setAllToys(data);
+        setLoader(false);
+      });
   };
+
+  if (loader) {
+    return (
+      <div className="h-96 w-96 mx-auto my-60">
+        <RotatingLines
+          strokeColor="grey"
+          strokeWidth="5"
+          animationDuration="0.75"
+          width="96"
+          visible={true}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="overflow-x-auto px-5 md:px-10 py-20">

@@ -3,18 +3,35 @@ import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
+import { RotatingLines } from "react-loader-spinner";
 
 const MyToys = () => {
   useTitle("KiddToY | My Toys");
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys/${user?.email}`)
+    fetch(`https://assignment11-xi.vercel.app/myToys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
+        setLoader(false);
       });
   }, [user]);
+
+  if (loader) {
+    return (
+      <div className="h-96 w-96 mx-auto my-60">
+        <RotatingLines
+          strokeColor="grey"
+          strokeWidth="5"
+          animationDuration="0.75"
+          width="96"
+          visible={true}
+        />
+      </div>
+    );
+  }
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -27,7 +44,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/myToys/${id}`, {
+        fetch(`https://assignment11-xi.vercel.app/myToys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -36,6 +53,7 @@ const MyToys = () => {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
               const remaining = myToys.filter((toy) => toy._id == id);
               setMyToys(remaining);
+              setLoader(false);
             }
           });
       }

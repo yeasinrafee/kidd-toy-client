@@ -1,21 +1,37 @@
 import { useEffect, useState } from "react";
 import ToyCard from "../../ToyCard/ToyCard";
+import { RotatingLines } from "react-loader-spinner";
 
 const Category = () => {
   const [allToys, setAllToys] = useState([]);
   const [activeTab, setActiveTab] = useState("");
+  const [loader, setLoader] = useState(true);
 
   const handleTab = (tabName) => {
     setActiveTab(tabName);
   };
   useEffect(() => {
-    fetch(`http://localhost:5000/alltoys/${activeTab}`)
+    fetch(`https://assignment11-xi.vercel.app/alltoys/${activeTab}`)
       .then((res) => res.json())
       .then((data) => {
         setAllToys(data);
+        setLoader(false);
       });
   }, [activeTab]);
 
+  if (loader) {
+    return (
+      <div className="h-96 w-96 mx-auto my-60">
+        <RotatingLines
+          strokeColor="grey"
+          strokeWidth="5"
+          animationDuration="0.75"
+          width="96"
+          visible={true}
+        />
+      </div>
+    );
+  }
   return (
     <div>
       <h2 className="text-4xl text-center font-bold my-16 text-violet-500">
