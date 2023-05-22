@@ -38,8 +38,8 @@ const UpdateToy = () => {
           );
           navigate("/myToys");
         }
+        form.reset();
       });
-    form.reset();
   };
 
   return (
