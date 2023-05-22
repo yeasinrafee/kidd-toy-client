@@ -35,13 +35,13 @@ const UpdateToy = () => {
             "Your Toy is Updated Successfully!",
             "success"
           );
-          form.reset();
         }
       });
+    form.reset();
   };
 
   return (
-    <div className="w-4/5 mx-auto border px-14 pt-10 pb-20 my-10 rounded-md shadow-lg">
+    <div className="w-4/5 mx-auto border px-5 md:px-14 pt-10 pb-20 my-10 rounded-md shadow-lg">
       <h1 className="text-4xl font-bold text-center my-6 text-violet-500">
         Update Your Toy
       </h1>

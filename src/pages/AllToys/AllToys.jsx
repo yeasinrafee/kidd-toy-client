@@ -22,10 +22,12 @@ const AllToys = () => {
   };
 
   return (
-    <div className="overflow-x-auto px-10 py-20">
+    <div className="overflow-x-auto px-5 md:px-10 py-20">
       <div className="form-control">
         <div className="input-group mb-9">
-          <h3 className="text-2xl mt-2 mr-5">Search Toy: </h3>
+          <h3 className="text-xl md:text-2xl md:mt-2 mr-3 md:mr-5">
+            Search Toy:{" "}
+          </h3>
           <input
             onChange={(e) => setSearchText(e.target.value)}
             type="text"

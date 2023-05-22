@@ -53,12 +53,12 @@ const AddAToy = () => {
   };
 
   return (
-    <div className="w-4/5 mx-auto border px-14 pt-10 pb-20 my-10 rounded-md shadow-lg">
+    <div className="w-4/5 mx-auto border px-5 md:px-14 pt-10 pb-20 my-10 rounded-md shadow-lg">
       <h1 className="text-4xl font-bold text-center my-6 text-violet-500">
         Add Your Toy
       </h1>
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Picture URL</span>

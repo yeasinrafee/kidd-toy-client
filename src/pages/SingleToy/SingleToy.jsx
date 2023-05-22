@@ -15,8 +15,8 @@ const SingleToy = () => {
     details,
   } = toy;
   return (
-    <div className="my-28 bg-violet-50 rounded-md">
-      <h2 className="text-3xl text-center text-violet-500 font-bold pt-20 mb-5 md:mb-0">
+    <div className="my-20 md:my-28 bg-violet-50 rounded-md">
+      <h2 className="text-3xl text-center text-violet-500 font-bold pt-10 md:pt-20 mb-5 md:mb-0">
         Toy Details
       </h2>
 
@@ -44,7 +44,7 @@ const SingleToy = () => {
           <p className="py-6 text-gray-400">
             <span className="font-bold text-black">Details: </span> {details}
           </p>
-          <p>
+          <p className="pb-7">
             <span className="mr-20">
               <span className="font-bold">Ratings: </span>
               {ratings} stars

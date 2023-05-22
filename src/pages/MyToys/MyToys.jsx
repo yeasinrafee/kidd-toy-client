@@ -42,7 +42,7 @@ const MyToys = () => {
     });
   };
   return (
-    <div className="px-10 py-20">
+    <div className="overflow-x-auto px-5 md:px-10 py-20">
       <h2 className="text-3xl text-violet-500 mt-5 mb-9">My Toys List: </h2>
       <table className="table w-full">
         {/* head */}
