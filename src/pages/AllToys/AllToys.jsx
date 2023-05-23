@@ -29,12 +29,12 @@ const AllToys = () => {
 
   if (loader) {
     return (
-      <div className="h-96 w-96 mx-auto my-60">
+      <div className="w-1/2 ml-40 md:mx-auto my-60">
         <RotatingLines
           strokeColor="grey"
           strokeWidth="5"
           animationDuration="0.75"
-          width="96"
+          width="56"
           visible={true}
         />
       </div>
@@ -42,8 +42,8 @@ const AllToys = () => {
   }
 
   return (
-    <div className="overflow-x-auto px-5 md:px-10 py-20">
-      <div className="form-control">
+    <div className="overflow-x-auto px-2 md:px-10 py-20">
+      <div className="form-control w-11/12 mx-auto">
         <div className="input-group mb-9">
           <h3 className="text-xl md:text-2xl md:mt-2 mr-3 md:mr-5">
             Search Toy:{" "}
@@ -74,7 +74,9 @@ const AllToys = () => {
         </div>
       </div>
       {/* Table Part  */}
-      <h2 className="text-3xl text-violet-500 mt-5 mb-9">All Toys List: </h2>
+      <h2 className="text-3xl pl-3 text-violet-500 mt-5 mb-9">
+        All Toys List:{" "}
+      </h2>
       <table className="table w-full">
         {/* head */}
         <thead>
