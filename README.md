@@ -1,6 +1,4 @@
-# b7a11-toy-marketplace-server-side-yeasinrafee
-
-b7a11-toy-marketplace-server-side-yeasinrafee created by GitHub Classroom
+# KiddToY Client
 
 ## Complete Project
 
