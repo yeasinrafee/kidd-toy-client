@@ -73,8 +73,11 @@ const PhotoGallery = () => {
     },
   ];
   return (
-    <div className="w-11/12 md:w-full mx-auto  py-5" data-aos="zoom-in-up">
-      <div className="text-violet-500 text-4xl text-center font-bold mt-40 mb-12">
+    <div
+      className="w-11/12 md:w-full mx-auto bg-violet-50"
+      data-aos="zoom-in-up"
+    >
+      <div className="text-violet-500 text-4xl text-center font-bold mt-24 mb-12 pt-8 rounded-md">
         Here is Our Beautiful Collection
       </div>
       <Gallery photos={photos} />
