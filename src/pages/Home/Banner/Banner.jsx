@@ -30,7 +30,7 @@ const Banner = () => {
           >
             <h2 className="text-4xl md:text-6xl uppercase font-bold text-violet-500 pb-9 md:pb-20">
               {" "}
-              Ready, Set, Play!
+              Ready, Set, <span className="text-white">Play!</span>
             </h2>
             <h2 className="text-gray-200 text-2xl md:text-4xl font-bold mb-2 md:mb-3 text-center px-5">
               Find the Perfect Car Toy for Your Little Speedster.
@@ -54,7 +54,7 @@ const Banner = () => {
           >
             <h2 className="text-3xl md:text-6xl uppercase font-bold text-violet-500 pb-9 md:pb-20">
               {" "}
-              Accelerate the Fun
+              <span className="text-white">Accelerate</span> the Fun
             </h2>
             <h2 className="text-gray-200 text-2xl md:text-4xl font-bold mb-2 md:mb-3 text-center px-5">
               Get Your Hands on Premium Car Toys Today!
@@ -78,7 +78,7 @@ const Banner = () => {
           >
             <h2 className="text-3xl md:text-6xl uppercase font-bold text-violet-500 pb-9 md:pb-20 text-center">
               {" "}
-              Discover The Thrills
+              Discover The <span className="text-white">Thrills</span>
             </h2>
             <h2 className="text-gray-200 text-2xl md:text-4xl font-bold mb-2 md:mb-3 text-center px-5">
               Shop the Ultimate Car Toy Wonderland!
