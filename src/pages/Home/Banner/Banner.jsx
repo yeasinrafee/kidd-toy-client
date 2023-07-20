@@ -21,19 +21,19 @@ const Banner = () => {
         className="h-[50vh] md:h-[85vh] w-full"
       >
         <SwiperSlide
-          style={{ backgroundImage: `url("./images/banner03.jpg")` }}
+          style={{ backgroundImage: `url("./images/banner03.webp")` }}
           className="bg-cover mt-2"
         >
           Slide 1
         </SwiperSlide>
         <SwiperSlide
-          style={{ backgroundImage: `url("./images/banner01.jpg")` }}
+          style={{ backgroundImage: `url("./images/banner01.webp")` }}
           className="bg-cover mt-2"
         >
           Slide 2
         </SwiperSlide>
         <SwiperSlide
-          style={{ backgroundImage: `url("./images/banner02.jpg")` }}
+          style={{ backgroundImage: `url("./images/banner02.webp")` }}
           className="bg-cover mt-2"
         >
           Slide 3
