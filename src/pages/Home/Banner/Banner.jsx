@@ -11,7 +11,7 @@ import { Pagination, Navigation } from "swiper/modules";
 
 const Banner = () => {
   return (
-    <div className="bg-violet-50">
+    <div>
       <Swiper
         pagination={{
           type: "progressbar",
@@ -22,19 +22,19 @@ const Banner = () => {
       >
         <SwiperSlide
           style={{ backgroundImage: `url("./images/banner03.webp")` }}
-          className="bg-cover mt-2"
+          className="bg-cover mt-3"
         >
           Slide 1
         </SwiperSlide>
         <SwiperSlide
           style={{ backgroundImage: `url("./images/banner01.webp")` }}
-          className="bg-cover mt-2"
+          className="bg-cover mt-3"
         >
           Slide 2
         </SwiperSlide>
         <SwiperSlide
           style={{ backgroundImage: `url("./images/banner02.webp")` }}
-          className="bg-cover mt-2"
+          className="bg-cover mt-3"
         >
           Slide 3
         </SwiperSlide>

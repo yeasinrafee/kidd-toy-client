@@ -74,10 +74,11 @@ const PhotoGallery = () => {
   ];
   return (
     <div className="w-11/12 md:w-full mx-auto" data-aos="zoom-in-up">
-      <div className="text-violet-500 text-3xl text-center font-bold mt-16 md:mt-36 mb-16 rounded-md">
+      <div className="text-violet-500 text-3xl text-center font-bold mt-16 md:mt-16 mb-16 rounded-md">
         <h2 className="uppercase">Here is Our Beautiful Collection</h2>
       </div>
       <Gallery photos={photos} />
+      <hr className="my-20 border-2 rounded" />
     </div>
   );
 };

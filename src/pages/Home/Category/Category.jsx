@@ -34,7 +34,8 @@ const Category = () => {
   }
   return (
     <div className=" py-4 px-4">
-      <h2 className="text-3xl uppercase text-center font-bold mb-14 mt-16 md:mt-36 text-violet-500">
+      <hr className="mt-20 border-2 rounded" />
+      <h2 className="text-3xl uppercase text-center font-bold mb-14 mt-16 md:mt-20 text-violet-500">
         Shop Category
       </h2>
       <div className="tabs my-5">
@@ -67,6 +68,7 @@ const Category = () => {
         {allToys &&
           allToys.map((toy) => <ToyCard key={toy._id} toy={toy}></ToyCard>)}
       </div>
+      <hr className="mt-24 border-2 rounded" />
     </div>
   );
 };
