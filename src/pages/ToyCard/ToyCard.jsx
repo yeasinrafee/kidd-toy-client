@@ -4,12 +4,25 @@ import { Link } from "react-router-dom";
 import "@smastrom/react-rating/style.css";
 import { Rating } from "@smastrom/react-rating";
 
+// for lazy image
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 const ToyCard = ({ toy }) => {
   const { picture, toy_name, price, ratings } = toy || {};
   return (
     <div className="card w-11/12 mx-auto bg-base-100 shadow-xl">
       <figure>
-        <img src={picture} alt="toy" />
+        {/* <img src={picture} alt="toy" /> */}
+
+        <LazyLoadImage
+          src={picture}
+          className="w-full h-64 object-cover"
+          alt="Chefs"
+          effect="blur"
+          delayTime={300}
+          delayMethod="throttle"
+        />
       </figure>
       <div className="card-body">
         <h2 className="text-2xl font-bold text-violet-500 text-center">

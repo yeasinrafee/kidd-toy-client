@@ -41,24 +41,24 @@ const Category = () => {
         <div
           onClick={() => handleTab("Sports")}
           className={`tab tab-lifted ${
-            activeTab == "Sports" ? "tab-active" : ""
-          }`}
+            activeTab == "Sports" ? "tab-active text-violet-500" : ""
+          } text-black font-bold`}
         >
           Sports Car
         </div>
         <div
           onClick={() => handleTab("Regular")}
           className={`tab tab-lifted ${
-            activeTab == "Regular" ? "tab-active" : ""
-          }`}
+            activeTab == "Regular" ? "tab-active text-violet-500" : ""
+          } text-black font-bold`}
         >
           Regular Car
         </div>
         <div
           onClick={() => handleTab("Police")}
           className={`tab tab-lifted ${
-            activeTab == "Police" ? "tab-active" : ""
-          }`}
+            activeTab == "Police" ? "tab-active text-violet-500" : ""
+          } font-bold text-black`}
         >
           Police Car
         </div>

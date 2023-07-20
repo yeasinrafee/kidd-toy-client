@@ -77,7 +77,7 @@ const PhotoGallery = () => {
       <div className="text-violet-500 text-3xl text-center font-bold mt-16 md:mt-36 mb-16 rounded-md">
         <h2 className="uppercase">Here is Our Beautiful Collection</h2>
       </div>
-      <Gallery photos={photos} data-aos="flip-left" />
+      <Gallery photos={photos} />
     </div>
   );
 };
