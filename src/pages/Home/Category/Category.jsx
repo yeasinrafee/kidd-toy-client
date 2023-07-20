@@ -33,8 +33,8 @@ const Category = () => {
     );
   }
   return (
-    <div className="bg-violet-50 py-4 px-4">
-      <h2 className="text-4xl text-center font-bold my-16 text-violet-500">
+    <div className=" py-4 px-4">
+      <h2 className="text-3xl uppercase text-center font-bold mb-14 mt-16 md:mt-36 text-violet-500">
         Shop Category
       </h2>
       <div className="tabs my-5">

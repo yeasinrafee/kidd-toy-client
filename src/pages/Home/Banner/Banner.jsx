@@ -18,7 +18,7 @@ const Banner = () => {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="h-[85vh] w-full"
+        className="h-[50vh] md:h-[85vh] w-full"
       >
         <SwiperSlide
           style={{ backgroundImage: `url("./images/banner03.jpg")` }}

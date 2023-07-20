@@ -4,7 +4,7 @@ const AboutUs = () => {
   useTitle("KiddToY | About Us");
   return (
     <div className="my-28 bg-violet-50 rounded-md" data-aos="fade-up">
-      <h2 className="text-3xl text-center text-violet-500 font-bold pt-20 mb-5 md:mb-0">
+      <h2 className="text-3xl uppercase text-center text-violet-500 font-bold pt-20 mb-5 md:mb-0">
         About Us
       </h2>
       <div className="flex flex-col md:flex-row justify-around items-center px-5 md:gap-16 md:p-20">
@@ -13,10 +13,11 @@ const AboutUs = () => {
           <img
             src="./images/about.webp"
             className=" rounded-lg shadow-2xl opacity-80"
+            data-aos="flip-left"
           />
         </div>
         <div className="w-full md:w-1/2">
-          <h1 className="text-2xl mt-5 md:text-5xl font-bold text-violet-900">
+          <h1 className="text-2xl mt-5 md:text-5xl font-bold text-violet-500">
             Learn About KiddToY
           </h1>
           <p className="py-6 text-gray-400">
