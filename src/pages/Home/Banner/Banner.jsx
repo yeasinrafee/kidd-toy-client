@@ -36,7 +36,7 @@ const Banner = () => {
             <div className='w-full hidden lg:block md:w-1/2 mt-8 md:mt-0'>
               <img
                 className='w-full h-[200px] md:h-[380px] object-cover opacity-90'
-                src='/public/images/banner01.webp'
+                src='/images/banner01.webp'
                 alt='Car Toy Banner'
               />
             </div>
@@ -64,7 +64,7 @@ const Banner = () => {
             <div className='w-full hidden lg:block md:w-1/2 mt-8 md:mt-0'>
               <img
                 className='w-full h-[200px] md:h-[380px] object-cover opacity-90'
-                src='/public/images/banner02.webp'
+                src='/images/banner02.webp'
                 alt='Car Toy Banner'
               />
             </div>
@@ -92,7 +92,7 @@ const Banner = () => {
             <div className='w-full hidden lg:block md:w-1/2 mt-8 md:mt-0'>
               <img
                 className='w-full h-[200px] md:h-[380px] object-cover opacity-90'
-                src='/public/images/banner03.webp'
+                src='/images/banner03.webp'
                 alt='Car Toy Banner'
               />
             </div>
