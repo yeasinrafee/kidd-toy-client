@@ -3,7 +3,7 @@ import useTitle from '../../../hooks/useTitle';
 const AboutUs = () => {
   useTitle('KiddToY | About Us');
   return (
-    <div className='my-28 bg-gradient-to-r from-violet-200 via-blue-200 to-violet-100 rounded-sm'>
+    <div className='my-28  rounded-sm'>
       <h2 className='text-3xl uppercase text-center text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-600 to-pink-500 font-bold pt-20 mb-5 md:mb-0'>
         About Us
       </h2>

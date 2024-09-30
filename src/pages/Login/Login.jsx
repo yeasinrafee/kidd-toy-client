@@ -1,16 +1,16 @@
-import { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../providers/AuthProvider";
-import useTitle from "../../hooks/useTitle";
+import { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
-  useTitle("Login");
-  const [error, setError] = useState("");
+  useTitle('Login');
+  const [error, setError] = useState('');
   const { user, logIn, googleLogIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from = location?.state?.from?.pathname || "/";
+  const from = location?.state?.from?.pathname || '/';
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -22,14 +22,14 @@ const Login = () => {
 
     // Password validation
     if (user) {
-      setError("");
+      setError('');
       if (user.email !== email) {
-        setError("Email and password could not matched");
-      } else if (email === "" || password === "") {
-        setError("All fields are required");
+        setError('Email and password could not matched');
+      } else if (email === '' || password === '') {
+        setError('All fields are required');
         return;
       } else if (password.length < 6) {
-        setError("Password must be at least 6 characters");
+        setError('Password must be at least 6 characters');
         return;
       }
     }
@@ -47,7 +47,7 @@ const Login = () => {
 
   // Handle Google Login
   const handleGoogle = () => {
-    setError("");
+    setError('');
     googleLogIn()
       .then((result) => {
         const user = result.user;
@@ -60,51 +60,51 @@ const Login = () => {
       });
   };
   return (
-    <div className="w-full md:w-1/2 mx-auto border px-14 pt-10 pb-20 my-10 rounded-md shadow-lg">
-      <h1 className="text-4xl font-bold text-center my-6 text-violet-500">
+    <div className='w-4/12   mx-auto border px-14 pt-10 pb-20 my-10 rounded-md shadow-lg'>
+      <h1 className='text-4xl uppercase font-bold text-center my-6 text-violet-500'>
         Please Login
       </h1>
-      <form onSubmit={handleLogin}>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Email</span>
+      <form className='space-y-5' onSubmit={handleLogin}>
+        <div className='form-control'>
+          <label className='label'>
+            <span className='label-text'>Email</span>
           </label>
           <input
-            type="text"
-            placeholder="email"
-            className="input input-bordered"
-            name="email"
+            type='text'
+            placeholder='email'
+            className='input input-bordered'
+            name='email'
           />
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Password</span>
+        <div className='form-control'>
+          <label className='label'>
+            <span className='label-text'>Password</span>
           </label>
           <input
-            type="text"
-            placeholder="password"
-            className="input input-bordered"
-            name="password"
+            type='text'
+            placeholder='password'
+            className='input input-bordered'
+            name='password'
           />
         </div>
         <input
-          type="submit"
-          value="Login"
-          className="btn btn-block bg-violet-500 border-none mt-5 hover:bg-violet-800"
+          type='submit'
+          value='Login'
+          className='btn btn-block bg-violet-500 border-none mt-5 hover:bg-violet-800'
         />
       </form>
 
       {/* Showing Error Text  */}
-      <p className="text-red-500 mt-3">{error}</p>
+      <p className='text-red-500 mt-3'>{error}</p>
 
-      <div className="mt-5 w-[250px] mx-auto">
+      <div className='mt-5 w-[250px] mx-auto'>
         <button onClick={handleGoogle}>
-          <img src="./images/googleSignIn.webp" alt="Google sign in" />
+          <img src='./images/googleSignIn.webp' alt='Google sign in' />
         </button>
       </div>
-      <p className="my-5 text-center text-sm">
-        New to service?{" "}
-        <Link to="/signup" className="text-violet-500 font-bold">
+      <p className='my-5 text-center text-sm'>
+        New to service?{' '}
+        <Link to='/signup' className='text-violet-500 font-bold'>
           Sign Up
         </Link>
       </p>

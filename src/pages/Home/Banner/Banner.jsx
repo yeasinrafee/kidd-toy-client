@@ -22,7 +22,7 @@ const Banner = () => {
       >
         {/* Slider 1 */}
         <SwiperSlide className='bg-cover flex items-center justify-center'>
-          <div className='flex items-center justify-center w-10/12 mx-auto mt-52'>
+          <div className='flex items-center justify-center w-10/12 mx-auto mt-44'>
             <div className='w-full'>
               <h2 className='text-3xl md:text-6xl uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-600 to-pink-500 pb-9 '>
                 Accelerate the <span className='text-black'>Run</span>
@@ -50,7 +50,7 @@ const Banner = () => {
 
         {/* Slider 2 */}
         <SwiperSlide className='bg-cover flex items-center justify-center'>
-          <div className='flex items-center justify-center w-10/12 mx-auto mt-52'>
+          <div className='flex items-center justify-center w-10/12 mx-auto mt-44'>
             <div className='w-full'>
               <h2 className='text-3xl md:text-6xl uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-600 to-pink-500 pb-9 '>
                 Ready, Set, <span className='text-black'>Play!</span>
@@ -78,7 +78,7 @@ const Banner = () => {
 
         {/* Slider 3 */}
         <SwiperSlide className='bg-cover flex items-center justify-center'>
-          <div className='flex items-center justify-center w-10/12 mx-auto mt-52'>
+          <div className='flex items-center justify-center w-10/12 mx-auto mt-44'>
             <div className='w-full'>
               <h2 className='text-3xl md:text-6xl uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-600 to-pink-500 pb-9 '>
                 Discover The <span className='text-black'>Play!</span>

@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../providers/AuthProvider";
-import useTitle from "../../hooks/useTitle";
+import { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const SignUp = () => {
-  useTitle("KiddToY | Sign Up");
+  useTitle('KiddToY | Sign Up');
   const { createUser, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleSignUp = (e) => {
@@ -24,77 +24,77 @@ const SignUp = () => {
         // It'll update the user name and Photo
         updateUser(name, photo)
           .then(() => {
-            console.log("User Updated");
+            console.log('User Updated');
             form.reset();
           })
           .catch((err) => console.log(err));
         console.log(user);
-        navigate("/");
+        navigate('/');
       })
       .catch((err) => console.log(err));
   };
   return (
-    <div className="w-full md:w-1/2 mx-auto border px-14 pt-10 pb-20 my-10 rounded-md shadow-lg">
-      <h1 className="text-4xl font-bold text-center my-6 text-violet-500">
+    <div className='w-4/12 mx-auto border px-14 pt-10 pb-20 my-10 rounded-md shadow-lg'>
+      <h1 className='text-4xl uppercase font-bold text-center my-6 text-violet-500'>
         Please Sign Up
       </h1>
-      <form onSubmit={handleSignUp}>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Name</span>
+      <form className='space-y-5' onSubmit={handleSignUp}>
+        <div className='form-control'>
+          <label className='label'>
+            <span className='label-text'>Name</span>
           </label>
           <input
-            type="text"
-            placeholder="Name"
-            className="input input-bordered"
-            name="name"
+            type='text'
+            placeholder='Name'
+            className='input input-bordered'
+            name='name'
             required
           />
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Email</span>
+        <div className='form-control'>
+          <label className='label'>
+            <span className='label-text'>Email</span>
           </label>
           <input
-            type="text"
-            placeholder="Email"
-            className="input input-bordered"
-            name="email"
+            type='text'
+            placeholder='Email'
+            className='input input-bordered'
+            name='email'
             required
           />
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Password</span>
+        <div className='form-control'>
+          <label className='label'>
+            <span className='label-text'>Password</span>
           </label>
           <input
-            type="text"
-            placeholder="Password"
-            className="input input-bordered"
-            name="password"
+            type='text'
+            placeholder='Password'
+            className='input input-bordered'
+            name='password'
             required
           />
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Photo URL</span>
+        <div className='form-control'>
+          <label className='label'>
+            <span className='label-text'>Photo URL</span>
           </label>
           <input
-            type="text"
-            placeholder="Photo URL"
-            className="input input-bordered"
-            name="photo"
+            type='text'
+            placeholder='Photo URL'
+            className='input input-bordered'
+            name='photo'
           />
         </div>
         <input
-          type="submit"
-          value="Sign Up"
-          className="btn btn-block bg-violet-500 border-none mt-3 hover:bg-violet-800"
+          type='submit'
+          value='Sign Up'
+          className='btn btn-block bg-violet-500 border-none mt-3 hover:bg-violet-800'
         />
       </form>
-      <p className="my-5 text-center text-sm">
-        Already have an account?{" "}
-        <Link to="/login" className="text-violet-500 font-bold">
+      <p className='my-5 text-center text-sm'>
+        Already have an account?{' '}
+        <Link to='/login' className='text-violet-500 font-bold'>
           Login
         </Link>
       </p>

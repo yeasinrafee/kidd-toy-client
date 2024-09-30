@@ -19,21 +19,21 @@ const SingleToy = () => {
     details,
   } = toy;
   return (
-    <div className=' bg-gradient-to-r from-violet-200 via-blue-200 to-violet-100 rounded-md'>
-      <h2 className='text-3xl text-center text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-600 to-pink-500 font-bold pt-10 md:pt-20 mb-5 md:mb-0'>
+    <div className=' bg-violet-50 rounded-md'>
+      <h2 className='text-3xl uppercase text-center text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-600 to-pink-500 font-bold pt-10 md:pt-20 mb-5 md:mb-0'>
         Toy Details
       </h2>
 
-      <div className='flex flex-col md:flex-row justify-center items-center px-5 md:gap-32 md:p-20'>
+      <div className='flex flex-col md:flex-row justify-center items-center px-5  md:p-20'>
         <div className='w-full md:w-1/2'>
           {' '}
           <img
             src={picture}
-            className=' w-full h-96  rounded-lg shadow-2xl opacity-80'
+            className=' w-9/12 h-96 mx-auto  rounded-lg shadow-2xl opacity-80'
           />
         </div>
         <div className='w-full md:w-1/3 '>
-          <h1 className='text-2xl mt-5 md:text-4xl font-bold text-gray-700'>
+          <h1 className='text-2xl uppercase mt-5 md:text-2xl font-bold text-gray-700'>
             {toy_name}
           </h1>
           <div className='mt-5 space-y-4'>
