@@ -7,6 +7,7 @@ const SignUp = () => {
   useTitle('KiddToY | Sign Up');
   const { createUser, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
+
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -33,9 +34,10 @@ const SignUp = () => {
       })
       .catch((err) => console.log(err));
   };
+
   return (
-    <div className='w-4/12 mx-auto border px-14 pt-10 pb-20 my-10 rounded-md shadow-lg'>
-      <h1 className='text-4xl uppercase font-bold text-center my-6 text-violet-500'>
+    <div className='w-full md:w-4/12 mx-auto border px-4 md:px-14 py-8 md:py-20 my-10 rounded-md shadow-lg'>
+      <h1 className='text-2xl md:text-4xl uppercase font-bold text-center my-6 text-violet-500'>
         Please Sign Up
       </h1>
       <form className='space-y-5' onSubmit={handleSignUp}>
@@ -46,7 +48,7 @@ const SignUp = () => {
           <input
             type='text'
             placeholder='Name'
-            className='input input-bordered'
+            className='input input-bordered w-full'
             name='name'
             required
           />
@@ -56,9 +58,9 @@ const SignUp = () => {
             <span className='label-text'>Email</span>
           </label>
           <input
-            type='text'
+            type='email'
             placeholder='Email'
-            className='input input-bordered'
+            className='input input-bordered w-full'
             name='email'
             required
           />
@@ -68,9 +70,9 @@ const SignUp = () => {
             <span className='label-text'>Password</span>
           </label>
           <input
-            type='text'
+            type='password'
             placeholder='Password'
-            className='input input-bordered'
+            className='input input-bordered w-full'
             name='password'
             required
           />
@@ -82,14 +84,14 @@ const SignUp = () => {
           <input
             type='text'
             placeholder='Photo URL'
-            className='input input-bordered'
+            className='input input-bordered w-full'
             name='photo'
           />
         </div>
         <input
           type='submit'
           value='Sign Up'
-          className='btn btn-block bg-violet-500 border-none mt-3 hover:bg-violet-800'
+          className='btn btn-block bg-violet-500 border-none mt-3 hover:bg-violet-800 w-full'
         />
       </form>
       <p className='my-5 text-center text-sm'>

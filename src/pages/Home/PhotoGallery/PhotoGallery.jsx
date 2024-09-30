@@ -47,7 +47,7 @@ const PhotoGallery = () => {
   return (
     <div className='w-11/12 md:w-full mx-auto' data-aos='zoom-in-up'>
       {/* Gallery Header */}
-      <div className='text-violet-500 text-3xl text-center font-bold mt-16 md:mt-16 mb-16 rounded-md'>
+      <div className='text-violet-500 lg:text-3xl text-2xl text-center font-bold mt-16 md:mt-16 mb-16 rounded-md'>
         <h2 className='uppercase'>Here is Our Beautiful Collection</h2>
       </div>
 

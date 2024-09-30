@@ -40,35 +40,35 @@ const Category = () => {
       <h2 className='text-3xl uppercase text-center font-bold mb-14 mt-16 md:mt-20 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-600 to-pink-500'>
         Shop Category
       </h2>
-      <div className='flex mb-10 text-2xl justify-center items-center border-red-500 my-5'>
+      <div className='flex mb-16 text-2xl justify-center items-center border-red-500 my-5'>
         <div
           onClick={() => handleTab('Sports')}
-          className={`tab tab-lifted ${
+          className={`tab text-lg uppercase tab-lifted ${
             activeTab === 'Sports' ? 'tab-active text-violet-500' : ''
-          } text-black font-bold`}
+          } text-black font-semibold`}
         >
-          Sports Car
+          Sports
         </div>
         <div
           onClick={() => handleTab('Regular')}
-          className={`tab tab-lifted ${
+          className={`tab text-lg uppercase tab-lifted ${
             activeTab === 'Regular' ? 'tab-active text-violet-500' : ''
-          } text-black font-bold`}
+          } text-black font-semibold`}
         >
-          Regular Car
+          Regular
         </div>
         <div
           onClick={() => handleTab('Police')}
-          className={`tab tab-lifted ${
+          className={`tab text-lg uppercase tab-lifted ${
             activeTab === 'Police' ? 'tab-active text-violet-500' : ''
-          } font-bold text-black`}
+          } font-semibold text-black`}
         >
-          Police Car
+          Police
         </div>
       </div>
 
       {/* Card Layout */}
-      <div className='grid grid-cols-2 md:grid-cols-4 gap-8 w-11/12 mx-auto'>
+      <div className='flex flex-col lg:grid lg:grid-cols-4 md:grid-cols-4 gap-8 w-11/12 mx-auto'>
         {allToys &&
           allToys.slice(0, 4).map((toy, index) => (
             <div
@@ -82,7 +82,7 @@ const Category = () => {
           ))}
       </div>
       {/* Centering additional cards */}
-      <div className='flex justify-center mt-8'>
+      <div className='flex flex-col lg:flex-row md:flex-row gap-8 justify-center mt-8'>
         {allToys.length > 4 &&
           allToys.slice(4).map((toy) => (
             <div key={toy._id} className='flex-shrink-0 w-full md:w-1/4'>
@@ -91,7 +91,7 @@ const Category = () => {
           ))}
       </div>
 
-      <hr className='mt-24 border-2 rounded' />
+      <hr className='my-20 border-2 rounded' />
     </div>
   );
 };

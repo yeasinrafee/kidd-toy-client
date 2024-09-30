@@ -20,7 +20,7 @@ const SingleToy = () => {
   } = toy;
   return (
     <div className=' bg-violet-50 rounded-md'>
-      <h2 className='text-3xl uppercase text-center text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-600 to-pink-500 font-bold pt-10 md:pt-20 mb-5 md:mb-0'>
+      <h2 className='text-3xl uppercase text-center text-transparent bg-clip-text bg-gradient-to-r text-violet-500 font-bold pt-10 md:pt-20 mb-5 md:mb-0'>
         Toy Details
       </h2>
 

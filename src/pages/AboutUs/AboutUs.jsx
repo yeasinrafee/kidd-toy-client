@@ -72,7 +72,7 @@ const AboutUs = () => {
       </div>
 
       {/* Our Toy Specialties Section */}
-      <div className='relative bg-violet-50 text-white py-20 px-6 lg:px-16'>
+      <div className='relative bg-violet-50 text-white py-28 px-6 lg:px-16'>
         <div className='max-w-7xl mx-auto'>
           <h2 className='lg:text-3xl text-2xl font-bold mb-16 text-center text-violet-500 uppercase'>
             Our Toy Specialties
@@ -127,12 +127,12 @@ const AboutUs = () => {
       </div>
 
       {/* Testimonials */}
-      <div className=' py-16'>
+      <div className=' py-28'>
         <div className='max-w-7xl mx-auto px-4'>
-          <h2 className='text-4xl font-bold uppercase text-center text-violet-500 mb-12'>
+          <h2 className='lg:text-3xl text-2xl font-bold uppercase text-center text-violet-500 mb-16'>
             What Our Customers Say
           </h2>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-20'>
+          <div className='w-11/12 mx-auto lg:w-full grid grid-cols-1 md:grid-cols-3 gap-20'>
             {testimonials.map((testimonial) => (
               <div
                 key={testimonial.id}
@@ -160,7 +160,7 @@ const AboutUs = () => {
           Ready to Explore Our Toys?
         </h2>
         <Link to='/alltoys'>
-          <button className='btn px-10 text-white bg-violet-500 hover:bg-violet-600'>
+          <button className='btn px-10 border-none text-white bg-violet-500 hover:bg-violet-600'>
             Shop Now
           </button>
         </Link>

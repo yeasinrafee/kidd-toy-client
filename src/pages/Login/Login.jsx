@@ -59,9 +59,10 @@ const Login = () => {
         setError(err.message);
       });
   };
+
   return (
-    <div className='w-4/12   mx-auto border px-14 pt-10 pb-20 my-10 rounded-md shadow-lg'>
-      <h1 className='text-4xl uppercase font-bold text-center my-6 text-violet-500'>
+    <div className='w-full md:w-4/12 mx-auto border px-4 md:px-14 py-8 md:py-20 my-10 rounded-md shadow-lg'>
+      <h1 className='text-2xl md:text-4xl uppercase font-bold text-center my-6 text-violet-500'>
         Please Login
       </h1>
       <form className='space-y-5' onSubmit={handleLogin}>
@@ -70,9 +71,9 @@ const Login = () => {
             <span className='label-text'>Email</span>
           </label>
           <input
-            type='text'
+            type='email'
             placeholder='email'
-            className='input input-bordered'
+            className='input input-bordered w-full'
             name='email'
           />
         </div>
@@ -81,27 +82,32 @@ const Login = () => {
             <span className='label-text'>Password</span>
           </label>
           <input
-            type='text'
+            type='password'
             placeholder='password'
-            className='input input-bordered'
+            className='input input-bordered w-full'
             name='password'
           />
         </div>
         <input
           type='submit'
           value='Login'
-          className='btn btn-block bg-violet-500 border-none mt-5 hover:bg-violet-800'
+          className='btn btn-block bg-violet-500 border-none mt-5 hover:bg-violet-800 w-full'
         />
       </form>
 
       {/* Showing Error Text  */}
-      <p className='text-red-500 mt-3'>{error}</p>
+      <p className='text-red-500 mt-3 text-center'>{error}</p>
 
-      <div className='mt-5 w-[250px] mx-auto'>
-        <button onClick={handleGoogle}>
-          <img src='./images/googleSignIn.webp' alt='Google sign in' />
+      <div className='mt-5 w-full md:w-[250px] mx-auto'>
+        <button onClick={handleGoogle} className='w-full'>
+          <img
+            src='/images/googleSignIn.webp'
+            alt='Google sign in'
+            className='w-full'
+          />
         </button>
       </div>
+
       <p className='my-5 text-center text-sm'>
         New to service?{' '}
         <Link to='/signup' className='text-violet-500 font-bold'>

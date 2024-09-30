@@ -1,14 +1,14 @@
 import { useContext, useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
-import { FaUserCircle, FaSearch } from 'react-icons/fa'; // Import FaSearch for the search icon
+import { FaUserCircle, FaSearch } from 'react-icons/fa';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [dropdownOpen, setDropdownOpen] = useState(false); // State to control dropdown visibility
-  const dropdownRef = useRef(null); // Create a reference for the dropdown menu
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const handleDropdownToggle = () => {
     setDropdownOpen(!dropdownOpen);
@@ -35,36 +35,35 @@ const Navbar = () => {
 
   const navMenu = (
     <>
-      <li className='mr-6'>
+      <li className='mr-4 lg:mr-6 text-sm lg:text-base'>
         <Link to='/'>Home</Link>
       </li>
-      <li className='mr-6'>
+      <li className='mr-4 lg:mr-6 text-sm lg:text-base'>
         <Link to='/about'>About</Link>
       </li>
-      <li className='mr-6'>
+      <li className='mr-4 lg:mr-6 text-sm lg:text-base'>
         <Link to='/allToys'>All Toys</Link>
       </li>
 
-      <li className='flex items-center mr-2'>
-        <div className='relative'>
-          <input
-            className='py-2 px-6 w-64 rounded-full bg-gray-200 text-black focus:outline-none'
-            type='search'
-            placeholder='Search toys...'
-          />
-          <FaSearch
-            className='absolute right-8 top-1/2 transform -translate-y-1/2 text-gray-600 cursor-pointer'
-            size={16}
-          />
-        </div>
-      </li>
+      {/* Conditionally render these items if the user is logged in */}
+      {user && (
+        <>
+          <li className='mr-4 lg:mr-6 text-sm lg:text-base'>
+            <Link to='/myToys'>My Toys</Link>
+          </li>
+          <li className='mr-4 lg:mr-6 text-sm lg:text-base'>
+            <Link to='/addAToy'>Add A Toy</Link>
+          </li>
+        </>
+      )}
     </>
   );
 
   return (
     <div className='bg-violet-500'>
-      <div className='navbar h-24 w-11/12 mx-auto text-white'>
+      <div className='navbar h-20 lg:h-24 w-11/12 mx-auto text-white'>
         <div className='navbar-start'>
+          {/* Mobile Menu Button */}
           <div className='dropdown'>
             <label tabIndex={0} className='btn btn-ghost lg:hidden'>
               <svg
@@ -84,21 +83,40 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-violet-500 rounded-box w-52'
+              className='menu menu-compact dropdown-content mt-4 p-2 shadow text-black bg-gray-50 rounded-box w-52'
             >
               {navMenu}
             </ul>
           </div>
-          <Link className='btn btn-ghost normal-case'>
-            <h2 className='text-4xl font-bold mb-5'>KiddToY</h2>
+          <Link className='normal-case'>
+            <h2 className='text-2xl mt-2 lg:text-4xl items-center font-bold mb-3 lg:mb-5'>
+              KiddToY
+            </h2>
           </Link>
         </div>
-        <div className='navbar-end hidden items-center lg:flex'>
-          <ul className='menu menu-horizontal px-1'>{navMenu}</ul>
+
+        {/* For larger screens (search bar and nav menu) */}
+        <div className='navbar-end hidden lg:flex '>
+          <ul className='flex gap-5 '>{navMenu}</ul>
+
+          {/* Search bar only for large screens */}
+          <div className='flex items-center mr-6'>
+            <div className='relative'>
+              <input
+                className='py-2 px-6 w-56 rounded-full bg-gray-200 text-black focus:outline-none'
+                type='search'
+                placeholder='Search toys...'
+              />
+              <FaSearch
+                className='absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-600 cursor-pointer'
+                size={16}
+              />
+            </div>
+          </div>
 
           {/* If user is logged in, show user image with dropdown */}
           {user ? (
-            <div className='relative' ref={dropdownRef}>
+            <div className='flex gap-5' ref={dropdownRef}>
               <Tippy content={user?.displayName}>
                 <div onClick={handleDropdownToggle} className='cursor-pointer'>
                   {user?.photoURL ? (
@@ -112,16 +130,42 @@ const Navbar = () => {
                   )}
                 </div>
               </Tippy>
+              <button
+                onClick={() => logOut()}
+                className='px-4 py-1   bg-white rounded-lg text-violet-500 hover:border hover:border-white hover:bg-violet-500 hover:text-white duration-300'
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link to='/login'>
+              <button className='px-7 py-1   bg-white rounded-lg text-violet-500 hover:border hover:border-white hover:bg-violet-500 hover:text-white duration-300'>
+                Login
+              </button>
+            </Link>
+          )}
+        </div>
 
-              {/* Dropdown Menu */}
+        {/* For mobile screens, show user image or login button at navbar end */}
+        <div className='navbar-end lg:hidden'>
+          {user ? (
+            <div className='relative' ref={dropdownRef}>
+              <Tippy content={user?.displayName}>
+                <div onClick={handleDropdownToggle} className='cursor-pointer'>
+                  {user?.photoURL ? (
+                    <img
+                      className='w-8 h-8 rounded-full'
+                      src={user.photoURL}
+                      alt='User Image'
+                    />
+                  ) : (
+                    <FaUserCircle className='text-xl' />
+                  )}
+                </div>
+              </Tippy>
+
               {dropdownOpen && (
-                <ul className='absolute right-0 z-50 mt-4 w-48 bg-white text-black rounded-lg shadow-lg'>
-                  <li className='px-4 py-2 hover:bg-gray-200'>
-                    <Link to='/myToys'>My Toys</Link>
-                  </li>
-                  <li className='px-4 py-2 hover:bg-gray-200'>
-                    <Link to='/addAToy'>Add A Toy</Link>
-                  </li>
+                <ul className='absolute right-0 z-50 mt-5 w-32 bg-white text-black rounded-lg shadow-lg'>
                   <li className='px-4 py-2 hover:bg-gray-200'>
                     <button onClick={() => logOut()}>Logout</button>
                   </li>
@@ -129,15 +173,11 @@ const Navbar = () => {
               )}
             </div>
           ) : (
-            <ul>
-              <li className=''>
-                <Link to='/login'>
-                  <button className='px-7 py-1 bg-white rounded-lg text-violet-500 hover:border hover:border-white   hover:bg-violet-500 hover:text-white duration-300'>
-                    Login
-                  </button>
-                </Link>
-              </li>
-            </ul>
+            <Link to='/login'>
+              <button className='px-5 py-2 bg-white rounded-lg text-violet-500 hover:border hover:border-white hover:bg-violet-500 hover:text-white duration-300'>
+                Login
+              </button>
+            </Link>
           )}
         </div>
       </div>

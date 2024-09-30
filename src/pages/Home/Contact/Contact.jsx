@@ -12,7 +12,9 @@ const Contact = () => {
         </p>
         <div className='text-black'>
           <p> Open Saturday-Friday</p>
-          <h3 className='text-xl md:text-2xl font-bold'>10:00am - 11:30pm</h3>
+          <h3 className='text-xl md:text-2xl lg:font-semibold'>
+            10:00am - 11:30pm
+          </h3>
         </div>
       </div>
       <div className='flex items-center gap-5 mb-9 md:mb-0'>
@@ -21,7 +23,9 @@ const Contact = () => {
         </p>
         <div className='text-black'>
           <p>Wanna know more?</p>
-          <h3 className='text-xl md:text-2xl font-bold'>+880 454 345 2345</h3>
+          <h3 className='text-xl md:text-2xl lg:font-semibold'>
+            +880 454 345 2345
+          </h3>
         </div>
       </div>
       <div className='flex items-center gap-5'>
@@ -30,7 +34,9 @@ const Contact = () => {
         </p>
         <div className='text-black'>
           <p>Visit Our Shop, Address: </p>
-          <h3 className='text-xl md:text-2xl font-bold'>Uttara, Dhaka-1230</h3>
+          <h3 className='text-xl md:text-2xl lg:font-semibold'>
+            Uttara, Dhaka-1230
+          </h3>
         </div>
       </div>
     </div>

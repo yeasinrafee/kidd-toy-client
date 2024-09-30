@@ -1,17 +1,12 @@
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
-// import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 
 const Banner = () => {
   return (
-    <div className='w-11/12 h-[80vh] mx-auto'>
+    <div className='w-11/12 lg:h-[80vh] mx-auto'>
       <Swiper
         pagination={{
           type: 'progressbar',
@@ -22,15 +17,15 @@ const Banner = () => {
       >
         {/* Slider 1 */}
         <SwiperSlide className='bg-cover flex items-center justify-center'>
-          <div className='flex items-center justify-center w-10/12 mx-auto mt-44'>
-            <div className='w-full'>
-              <h2 className='text-3xl md:text-6xl uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-600 to-pink-500 pb-9 '>
+          <div className='flex flex-col md:flex-row items-center justify-center w-full md:w-10/12 mx-auto mt-20 md:mt-44'>
+            <div className='w-full md:w-1/2 text-center md:text-left'>
+              <h2 className='text-2xl md:text-5xl uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-600 to-pink-500 pb-5 md:pb-9'>
                 Accelerate the <span className='text-black'>Run</span>
               </h2>
-              <h2 className=' text-2xl md:text-4xl font-bold mb-2 md:mb-3 '>
-                Get your Hands On Premium Car Toys Today
+              <h2 className='text-base md:text-3xl font-bold mb-2 md:mb-3'>
+                Get your Hands On Premium <br /> Car Toys Today
               </h2>
-              <p className='w-4/5 md:w-2/3 mt-7 text-xs md:text-base'>
+              <p className='w-4/5 md:w-2/3 mx-auto md:mx-0 mt-4 md:mt-7 text-xs md:text-base'>
                 Welcome to our adrenaline-pumping world of car toys! Discover a
                 captivating collection that fuels joy and ignites imaginations.
                 From sleek sports cars to rugged off-road monsters, find the
@@ -38,11 +33,11 @@ const Banner = () => {
                 imagination begin!
               </p>
             </div>
-            <div className='w-5/6'>
+            <div className='w-full hidden lg:block md:w-1/2 mt-8 md:mt-0'>
               <img
-                className='w-full h-[380px] object-cover'
+                className='w-full h-[200px] md:h-[380px] object-cover opacity-90'
                 src='/public/images/banner01.webp'
-                alt=''
+                alt='Car Toy Banner'
               />
             </div>
           </div>
@@ -50,15 +45,15 @@ const Banner = () => {
 
         {/* Slider 2 */}
         <SwiperSlide className='bg-cover flex items-center justify-center'>
-          <div className='flex items-center justify-center w-10/12 mx-auto mt-44'>
-            <div className='w-full'>
-              <h2 className='text-3xl md:text-6xl uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-600 to-pink-500 pb-9 '>
+          <div className='flex flex-col md:flex-row items-center justify-center w-full md:w-10/12 mx-auto mt-20 md:mt-44'>
+            <div className='w-full md:w-1/2 text-center md:text-left'>
+              <h2 className='text-2xl md:text-5xl uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-600 to-pink-500 pb-5 md:pb-9'>
                 Ready, Set, <span className='text-black'>Play!</span>
               </h2>
-              <h2 className=' text-2xl md:text-4xl font-bold mb-2 md:mb-3 '>
-                Find the Perfect Car Toy for Your Little Speedster.
+              <h2 className='text-base md:text-3xl font-bold mb-2 md:mb-3'>
+                Find the Perfect Car Toy for <br /> Your Little Speedster.
               </h2>
-              <p className='w-4/5 md:w-2/3 mt-7 text-xs md:text-base'>
+              <p className='w-4/5  md:w-2/3 mx-auto md:mx-0 mt-4 md:mt-7 text-xs md:text-base'>
                 Welcome to our adrenaline-pumping world of car toys! Discover a
                 captivating collection that fuels joy and ignites imaginations.
                 From sleek sports cars to rugged off-road monsters, find the
@@ -66,11 +61,11 @@ const Banner = () => {
                 imagination begin!
               </p>
             </div>
-            <div className='w-5/6'>
+            <div className='w-full hidden lg:block md:w-1/2 mt-8 md:mt-0'>
               <img
-                className='w-full h-[380px] object-cover'
+                className='w-full h-[200px] md:h-[380px] object-cover opacity-90'
                 src='/public/images/banner02.webp'
-                alt=''
+                alt='Car Toy Banner'
               />
             </div>
           </div>
@@ -78,15 +73,15 @@ const Banner = () => {
 
         {/* Slider 3 */}
         <SwiperSlide className='bg-cover flex items-center justify-center'>
-          <div className='flex items-center justify-center w-10/12 mx-auto mt-44'>
-            <div className='w-full'>
-              <h2 className='text-3xl md:text-6xl uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-600 to-pink-500 pb-9 '>
+          <div className='flex flex-col md:flex-row items-center justify-center w-full md:w-10/12 mx-auto mt-20 md:mt-44'>
+            <div className='w-full md:w-1/2 text-center md:text-left'>
+              <h2 className='text-2xl md:text-5xl uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-600 to-pink-500 pb-5 md:pb-9'>
                 Discover The <span className='text-black'>Play!</span>
               </h2>
-              <h2 className=' text-2xl md:text-4xl font-bold mb-2 md:mb-3 '>
+              <h2 className='text-base md:text-3xl font-bold mb-2 md:mb-3'>
                 Shop the ultimate car toy Wonderland
               </h2>
-              <p className='w-4/5 md:w-2/3 mt-7  text-xs md:text-base'>
+              <p className='w-4/5 md:w-2/3 mx-auto md:mx-0 mt-4 md:mt-7 text-xs md:text-base'>
                 Welcome to our adrenaline-pumping world of car toys! Discover a
                 captivating collection that fuels joy and ignites imaginations.
                 From sleek sports cars to rugged off-road monsters, find the
@@ -94,11 +89,11 @@ const Banner = () => {
                 imagination begin!
               </p>
             </div>
-            <div className='w-5/6'>
+            <div className='w-full hidden lg:block md:w-1/2 mt-8 md:mt-0'>
               <img
-                className='w-full h-[380px] object-cover'
+                className='w-full h-[200px] md:h-[380px] object-cover opacity-90'
                 src='/public/images/banner03.webp'
-                alt=''
+                alt='Car Toy Banner'
               />
             </div>
           </div>

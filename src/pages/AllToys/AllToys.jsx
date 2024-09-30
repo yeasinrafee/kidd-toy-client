@@ -43,10 +43,10 @@ const AllToys = () => {
 
   return (
     <div className='px-2 md:px-10 py-20 '>
-      <div className='flex items-center justify-center'>
+      <div className='w-11/12 lg:w-full mx-auto flex items-center justify-center'>
         <div className='form-control'>
           <div className='input-group mb-9 w-full max-w-lg'>
-            <h3 className='text-xl md:text-2xl md:mt-2 mr-3 md:mr-5'>
+            <h3 className='lg:text-xl font-semibold md:mt-2 mr-3 md:mr-5'>
               Search Toy:
             </h3>
             <input
@@ -56,7 +56,10 @@ const AllToys = () => {
               className='input input-bordered'
               name='search'
             />
-            <button onClick={handleSearch} className='btn btn-square'>
+            <button
+              onClick={handleSearch}
+              className='btn btn-square bg-violet-500 border-none text-white'
+            >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-6 w-6'
@@ -76,7 +79,7 @@ const AllToys = () => {
         </div>
       </div>
 
-      <h2 className='text-3xl pl-3 uppercase text-center text-violet-500 mt-5 mb-9'>
+      <h2 className='text-2xl pl-3 uppercase text-center font-semibold text-violet-500 my-10'>
         All Toys List:{' '}
       </h2>
 
@@ -105,7 +108,7 @@ const AllToys = () => {
               <p className='mt-1 text-gray-700'>Available: {toys?.quantity}</p>
             </div>
             <Link to={`/toys/${toys?._id}`} className='mt-4'>
-              <button className='btn bg-violet-500 text-white hover:bg-violet-600 w-full'>
+              <button className='btn bg-violet-500 border-none text-white hover:bg-violet-600 w-full'>
                 Details
               </button>
             </Link>
